@@ -27,6 +27,12 @@ sudo crontab -e
 
 This will download the list of Cloudflare IP addresses every 5 hours.
 
+### Config (/etc/nginx/sites-available)
+```conf
+real_ip_header CF-Connecting-IP;
+include /etc/nginx/cloudflare_ips.conf;
+```
+
 
 ## License
 MIT
