@@ -1,7 +1,7 @@
 {
   "name": "cloudflare-ip-ranges",
   "version": "1.0.0",
-  "description": "List of Cloudflare IP addresses (IPv4 and IPv6).",
+  "description": "A list of Cloudflare IP addresses (IPv4 and IPv6).",
   "homepage": "https://github.com/sefinek/Cloudflare-IP-Ranges#readme",
   "bugs": {
     "url": "https://github.com/sefinek/Cloudflare-IP-Ranges/issues"
