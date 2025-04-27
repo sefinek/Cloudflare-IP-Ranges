@@ -1,5 +1,5 @@
 import { get } from 'node:https';
-import { writeFile } from 'node:fs/promises';
+import { writeFile, mkdir } from 'node:fs/promises';
 
 const urls = [
 	'https://www.cloudflare.com/ips-v4',
@@ -22,9 +22,18 @@ const download = url => new Promise((resolve, reject) => {
 });
 
 const main = async () => {
+	await mkdir('lists', { recursive: true });
+
 	const contents = await Promise.all(urls.map(download));
-	await writeFile('cloudflare_ips', contents.join('\n') + '\n');
-	console.log('cloudflare_ips updated');
+	const ips = contents.join('\n').trim().split('\n').filter(Boolean);
+
+	// Raw
+	await writeFile('lists/cloudflare_ips_raw.txt', ips.join('\n') + '\n');
+	console.log('✅ Updated lists/cloudflare_ips_raw.txt');
+
+	// Nginx
+	await writeFile('lists/cloudflare_ips_nginx.conf', ips.map(ip => `set_real_ip_from ${ip};`).join('\n') + '\n');
+	console.log('✅ Updated lists/cloudflare_ips_nginx.conf');
 };
 
 main().catch(err => {
