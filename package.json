@@ -1,0 +1,24 @@
+{
+  "name": "cloudflare-ip-ranges",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/sefinek/Cloudflare-IP-Ranges#readme",
+  "bugs": {
+    "url": "https://github.com/sefinek/Cloudflare-IP-Ranges/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sefinek/Cloudflare-IP-Ranges.git"
+  },
+  "license": "MIT",
+  "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "globals": "^15.12.0"
+  }
+}
