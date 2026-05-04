@@ -1,6 +1,9 @@
 # Cloudflare IP Ranges
 A simple script to automatically download and update the list of Cloudflare IP addresses (IPv4 and IPv6).
 
+## ⚠️ Deprecated
+Moved to https://github.com/sefinek/trusted-ips-whitelist.
+
 
 ## Lists
 The lists are updated automatically every 4 hours via GitHub Actions.
